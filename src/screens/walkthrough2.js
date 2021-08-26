@@ -1,11 +1,14 @@
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import React from "react";
-import { SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
+import { SafeAreaView } from "react-native";
 import styled from "styled-components";
 import { Spacer } from "../components/spacer";
 import { Button } from "../components/button";
+import { decode } from "html-entities";
+import { Text } from "../components/typography/text.component";
 
 const Walkthrough2 = ({ navigation }) => {
+  // HTML element not working on Android
+  const arrow = decode("&#8592;", { level: "html5" });
   return (
     <Wrapper>
       <SafeAreaCont>
@@ -15,16 +18,18 @@ const Walkthrough2 = ({ navigation }) => {
 
         <TextWrapper>
           <Spacer />
-          <Topic>Revenue</Topic>
-          <View>
-            <HeaderStyles>
-              Business opportunities for creative industry.
-            </HeaderStyles>
+          <TextCont>
+            <Text variant="caption">Revenue</Text>
+            <Spacer position="vertical" size="large">
+              <Text variant="title" style={{ textAlign: "center" }}>
+                Business opportunities for creative industry.
+              </Text>
+            </Spacer>
 
-            <SubHeader>
+            <Text style={{ textAlign: "center" }}>
               Make life better with music and endless inspiration
-            </SubHeader>
-          </View>
+            </Text>
+          </TextCont>
 
           <DotContainer>
             <Dot />
@@ -37,7 +42,7 @@ const Walkthrough2 = ({ navigation }) => {
           <ButtonContainer>
             <BackBtnCont>
               <Button
-                title="&#8592;"
+                title={arrow}
                 backgroundColor="white"
                 onPress={() => navigation.navigate("Walkthrough")}
               />
@@ -83,22 +88,8 @@ const TextWrapper = styled.View`
   background-color: ${(props) => props.theme.colors.ui.primary};
 `;
 
-const Topic = styled.Text`
-  color: ${(props) => props.theme.colors.text.tertiary};
-  text-transform: uppercase;
-`;
-
-const HeaderStyles = styled.Text`
-  font-size: ${RFPercentage(4)};
-  text-align: center;
-  color: ${(props) => props.theme.colors.text.primary};
-  margin-bottom: ${(props) => props.theme.space[2]};
-`;
-
-const SubHeader = styled.Text`
-  color: ${(props) => props.theme.colors.text.primary};
-  text-align: center;
-  font-size: ${RFPercentage(2)};
+const TextCont = styled.View`
+  align-items: center;
 `;
 
 const DotContainer = styled.View`

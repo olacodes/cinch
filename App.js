@@ -1,19 +1,23 @@
 import React from "react";
 import { StatusBar } from "react-native";
-import Walkthrough from "./src/screens/walkthrough";
+import Walkthrough from "./src/screens/walkthrough/walkthrough";
 import Walkthrough2 from "./src/screens/walkthrough2";
 import LoadingPage from "./src/screens/loading";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { useFonts, Lato_400Regular } from "@expo-google-fonts/lato";
 import AppLoading from "expo-app-loading";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_900Black,
+} from "@expo-google-fonts/roboto";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  let [fontsLoaded] = useFonts({ Lato_400Regular });
+  let [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_900Black });
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {

@@ -1,10 +1,6 @@
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
-
 export const fonts = {
-  body: "Lato_400Regular",
+  title: "Roboto_900Black",
+  body: "Roboto_400Regular",
 };
 
 export const fontWeights = {
@@ -17,8 +13,7 @@ export const fontSizes = {
   caption: "12px",
   button: "14px",
   body: "16px",
-  title: "20px",
-  h5: "24px",
+  title: "26px",
   h4: "34px",
   h3: "45px",
   h2: "56px",

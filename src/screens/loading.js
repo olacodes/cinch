@@ -1,6 +1,8 @@
 import React from "react";
-import { Image, Text, TouchableOpacity } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import styled from "styled-components";
+import { Spacer } from "../components/spacer";
+import { Text } from "../components/typography/text.component";
 
 const LoadingPage = ({ navigation, ...props }) => (
   <TouchableOpacity
@@ -9,7 +11,9 @@ const LoadingPage = ({ navigation, ...props }) => (
   >
     <LoadingCont>
       <Image source={require("../assets/images/icon.png")} />
-      <LoadingText className="text">Cinch Distro</LoadingText>
+      <Spacer position="top" size="medium">
+        <Text className="text">Cinch Distro</Text>
+      </Spacer>
     </LoadingCont>
   </TouchableOpacity>
 );
@@ -19,14 +23,6 @@ const LoadingCont = styled.View`
   background-color: ${(props) => props.theme.colors.bg.primary};
   justify-content: center;
   align-items: center;
-`;
-
-const LoadingText = styled(Text)`
-  color: ${(props) => props.theme.colors.text.primary};
-  padding: 10px;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-family: ${(props) => props.theme.fonts.body};
 `;
 
 export default LoadingPage;
