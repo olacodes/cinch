@@ -10,10 +10,12 @@ const defaultTextStyles = (theme) => `
 
 const body = (theme) => `
     font-size: ${theme.fontSizes.body};
+    line-height: ${theme.lineHeights.body}
 `;
 
 const hint = (theme) => `
     font-size: ${theme.fontSizes.body};
+    font-family: ${theme.fonts.title};
 `;
 
 const error = (theme) => `

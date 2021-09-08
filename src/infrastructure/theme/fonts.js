@@ -1,6 +1,7 @@
 export const fonts = {
   title: "Roboto_900Black",
-  body: "Roboto_400Regular",
+  regular: "Roboto_400Regular",
+  body: "Roboto_300Light",
 };
 
 export const fontWeights = {

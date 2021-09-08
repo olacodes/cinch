@@ -1,66 +1,44 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { StatusBar } from "react-native";
-import Walkthrough from "./src/screens/walkthrough/walkthrough";
-import Walkthrough2 from "./src/screens/walkthrough2";
-import LoadingPage from "./src/screens/loading";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
-  Roboto_400Regular,
+  Roboto_300Light,
   Roboto_900Black,
+  Roboto_400Regular,
 } from "@expo-google-fonts/roboto";
 
-const Stack = createNativeStackNavigator();
+import { Navigation } from "./src/navigations";
+import { PersistGate } from "redux-persist/integration/react";
 
-export default function App() {
-  let [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_900Black });
+import getStore from "./src/redux/store";
+export const { store, persistor } = getStore();
+
+const App = () => {
+  let [fontsLoaded] = useFonts({
+    Roboto_300Light,
+    Roboto_900Black,
+    Roboto_400Regular,
+  });
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
     return (
-      <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator
-            initialRouteName="Loading"
-            screenOptions={{
-              headerStyle: {
-                backgroundColor: "black",
-              },
-              headerTintColor: "#fff",
-              headerTitleStyle: {
-                fontWeight: "bold",
-              },
-            }}
-          >
-            <Stack.Screen
-              name="Loading"
-              component={LoadingPage}
-              options={{
-                title: "",
-              }}
-            />
-            <Stack.Screen
-              name="Walkthrough"
-              component={Walkthrough}
-              options={{
-                title: "",
-              }}
-            />
-            <Stack.Screen
-              name="Walkthrough2"
-              component={Walkthrough2}
-              options={{
-                title: "",
-              }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-        <StatusBar style="auto" barStyle="light-content" />
-      </ThemeProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={theme}>
+            <Navigation />
+            <StatusBar style="auto" barStyle="light-content" />
+          </ThemeProvider>
+        </PersistGate>
+      </Provider>
     );
   }
-}
+};
+
+export default () => {
+  return <App />;
+};
