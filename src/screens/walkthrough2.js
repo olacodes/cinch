@@ -49,7 +49,10 @@ const Walkthrough2 = ({ navigation }) => {
             </BackBtnCont>
             <Spacer size="xLarge" position="horizontal" />
             <SkipBtnCont>
-              <Button title="SKIP" />
+              <Button
+                title="SKIP"
+                onPress={() => navigation.navigate("login")}
+              />
             </SkipBtnCont>
           </ButtonContainer>
         </TextWrapper>
