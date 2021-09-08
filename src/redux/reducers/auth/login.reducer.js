@@ -31,6 +31,7 @@ const LoginReducer = (state = loginState, action) => {
         message: payload.data.message,
         loading: false,
         payload: payload.data,
+        errors: "",
       };
     case LOGIN.default:
       return {

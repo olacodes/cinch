@@ -5,7 +5,7 @@ export const Wrapper = styled.View`
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
 export const Container = styled.View`
-  margin: ${(props) => props.theme.space[4]};
+  margin: ${(props) => props.theme.space[2]};
   background-color: ${(props) => props.theme.colors.ui.primary};
   flex: 1;
   border-radius: ${(props) => props.theme.sizes[2]};
@@ -31,4 +31,9 @@ export const TextContainer = styled.View`
 
 export const LineStyle = styled.View`
   border: 0.5px solid ${(props) => props.theme.colors.text.disabled};
+`;
+
+export const SocialListCont = styled.View`
+  flex: 1;
+  justify-content: flex-end;
 `;
