@@ -11,6 +11,8 @@
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.2.0",
     "@react-native-async-storage/async-storage": "^1.15.7",
+    "@react-navigation/bottom-tabs": "^6.0.5",
+    "@react-navigation/material-top-tabs": "^5.x",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
     "axios": "^0.21.1",
@@ -25,6 +27,7 @@
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
+    "react-native-tab-view": "^2.x",
     "react-native-web": "~0.13.12",
     "react-redux": "^7.2.4",
     "redux": "^4.1.1",
