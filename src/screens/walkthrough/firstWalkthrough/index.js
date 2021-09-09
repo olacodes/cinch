@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "../../components/button";
-import { Spacer } from "../../components/spacer";
-import { Text } from "../../components/typography/text.component";
+import { Button } from "src/components/button";
+import { Spacer } from "src/components/spacer";
+import { Text } from "src/components/typography/text.component";
 import {
   SafeAreaViewCont,
   ImageWrapper,
@@ -9,16 +9,16 @@ import {
   ImageContainer,
   TextWrapper,
   BackgroundImage,
-} from "./walkthrough.styles";
+} from "./styles";
 
-const Walkthrough = ({ navigation }) => {
+const FirstWalkthrough = ({ navigation }) => {
   return (
     <SafeAreaViewCont>
       <Container>
         <ImageWrapper>
           <ImageContainer>
             <BackgroundImage
-              source={require("../../assets/images/standinglady.png")}
+              source={require("src/assets/images/standinglady.png")}
             />
           </ImageContainer>
         </ImageWrapper>
@@ -35,7 +35,7 @@ const Walkthrough = ({ navigation }) => {
           <Spacer>
             <Button
               title="Next"
-              onPress={() => navigation.navigate("Walkthrough2")}
+              onPress={() => navigation.navigate("SecondWalkthrough")}
             />
           </Spacer>
         </TextWrapper>
@@ -44,4 +44,4 @@ const Walkthrough = ({ navigation }) => {
   );
 };
 
-export default Walkthrough;
+export default FirstWalkthrough;

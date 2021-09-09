@@ -1,8 +1,10 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { StatusBar } from "react-native";
+import { PersistGate } from "redux-persist/integration/react";
 import { ThemeProvider } from "styled-components/native";
-import { theme } from "./src/infrastructure/theme";
+
+import { theme } from "src/infrastructure/theme";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
@@ -10,11 +12,9 @@ import {
   Roboto_900Black,
   Roboto_400Regular,
 } from "@expo-google-fonts/roboto";
-
-import { Navigation } from "./src/navigations";
-import { PersistGate } from "redux-persist/integration/react";
-
+import { RootNavigation } from "src/navigations/root";
 import getStore from "./src/redux/store";
+
 export const { store, persistor } = getStore();
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider theme={theme}>
-            <Navigation />
+            <RootNavigation />
             <StatusBar style="auto" barStyle="light-content" />
           </ThemeProvider>
         </PersistGate>

@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, TouchableOpacity } from "react-native";
 import styled from "styled-components";
-import { Spacer } from "../components/spacer";
-import { Text } from "../components/typography/text.component";
+import { Spacer } from "src/components/spacer";
+import { Text } from "src/components/typography/text.component";
 
 const LoadingPage = ({ navigation, ...props }) => (
   <TouchableOpacity
@@ -10,7 +10,7 @@ const LoadingPage = ({ navigation, ...props }) => (
     onPress={() => navigation.navigate("Walkthrough")}
   >
     <LoadingCont>
-      <Image source={require("../assets/images/icon.png")} />
+      <Image source={require("src/assets/images/icon.png")} />
       <Spacer position="top" size="medium">
         <Text className="text">Cinch Distro</Text>
       </Spacer>
