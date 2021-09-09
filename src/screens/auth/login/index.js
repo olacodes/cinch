@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Text } from "../../components/typography/text.component";
-import { Spacer } from "../../components/spacer";
+import { connect } from "react-redux";
 import { TextInput, StyleSheet } from "react-native";
-import { Button } from "../../components/button";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { Text } from "src/components/typography/text.component";
+import { Spacer } from "src/components/spacer";
+import { Button } from "src/components/button";
+import { SocialList } from "src/components/socials/socialList";
+import login, {
+  clearLoginErrorAction as clear,
+} from "src/redux/actions/auth/login.action";
 import {
   Wrapper,
   Container,
@@ -14,11 +19,6 @@ import {
   LineStyle,
   SocialListCont,
 } from "./login.styles";
-import login, {
-  clearLoginErrorAction as clear,
-} from "../../redux/actions/auth/login.action";
-import { connect } from "react-redux";
-import { SocialList } from "src/components/socials/socialList";
 
 const LoginScreen = ({ loginData, login, clear, navigation }) => {
   const [email, setEmail] = useState("");
