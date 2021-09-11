@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { AuthNavigation } from "./auth.navigation";
 import LoadingPage from "src/screens/loading";
 import { WalkthroughNavigation } from "./walkthrough.navigation";
+import { DashboardNavigation } from "./dashboard.navigation";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ export const RootNavigation = () => (
       >
         <Stack.Screen name="Walkthrough" component={WalkthroughNavigation} />
         <Stack.Screen name="Auth" component={AuthNavigation} />
+        <Stack.Screen name="Dashboard" component={DashboardNavigation} />
         <Stack.Screen name="Loading" component={LoadingPage} />
       </Stack.Navigator>
     </NavigationContainer>

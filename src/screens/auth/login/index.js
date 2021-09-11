@@ -30,7 +30,7 @@ const LoginScreen = ({ loginData, login, clear, navigation }) => {
     if (message === "failure") {
       return;
     } else if (message === "success") {
-      navigation.navigate("Loading");
+      navigation.navigate("Dashboard");
     }
   }, [message, navigation]);
   const handleSubmit = async () => await login({ email, password }, auth);
