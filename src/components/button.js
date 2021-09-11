@@ -6,10 +6,8 @@ import { black, yellow } from "../utils/colors";
 
 export const Button = ({ onPress, title, backgroundColor, color }) => {
   return (
-    <ButtonContainer backgroundColor={backgroundColor}>
-      <TouchableOpacity onPress={onPress}>
-        <ButtonText color={color}>{title}</ButtonText>
-      </TouchableOpacity>
+    <ButtonContainer backgroundColor={backgroundColor} onPress={onPress}>
+      <ButtonText color={color}>{title}</ButtonText>
     </ButtonContainer>
   );
 };
