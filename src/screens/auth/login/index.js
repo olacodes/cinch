@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { connect } from "react-redux";
-import { TextInput, StyleSheet } from "react-native";
+import { TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { Text } from "src/components/typography/text.component";
@@ -84,9 +84,11 @@ const LoginScreen = ({ loginData, login, clear, navigation }) => {
               <Button title="LOGIN" onPress={handleSubmit} />
             </Spacer>
             <Spacer position="top" size="large">
-              <Text variant="hint" style={{ textAlign: "center" }}>
-                Create new account
-              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate("register")}>
+                <Text variant="hint" style={{ textAlign: "center" }}>
+                  Create new account
+                </Text>
+              </TouchableOpacity>
             </Spacer>
           </BottomContent>
           <SocialListCont>

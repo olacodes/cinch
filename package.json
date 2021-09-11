@@ -20,6 +20,7 @@
     "expo-app-loading": "^1.1.2",
     "expo-font": "~9.2.1",
     "expo-status-bar": "~1.0.4",
+    "formik": "^2.2.9",
     "html-entities": "^2.3.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -33,7 +34,8 @@
     "redux": "^4.1.1",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

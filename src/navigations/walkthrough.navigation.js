@@ -17,6 +17,7 @@ export const WalkthroughNavigation = () => (
   <Stack.Navigator
     initialRouteName="FirstWalkthrough"
     screenOptions={screenOptionsStyle}
+    Options={{ Animation: "fade" }}
   >
     <Stack.Screen name="FirstWalkthrough" component={FirstWalkthrough} />
     <Stack.Screen name="SecondWalkthrough" component={SecondWalkthrough} />

@@ -3,9 +3,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 
-import { AuthNavigation } from "./auth";
+import { AuthNavigation } from "./auth.navigation";
 import LoadingPage from "src/screens/loading";
-import { WalkthroughNavigation } from "./walkthrough";
+import { WalkthroughNavigation } from "./walkthrough.navigation";
 
 const Stack = createNativeStackNavigator();
 
